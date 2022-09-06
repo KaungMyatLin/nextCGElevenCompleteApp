@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import Appearance from '../components/homePage/appearance_Cmp'
 import FeaturedPosts from '../components/homePage/featuredposts_Cmp'
-const DUMMY_POST = [
+const DUMMY_POSTS = [
     {
         title: "Getting started with nextjs",
         image: "getting-started-with-nextjs.png",
@@ -36,7 +36,7 @@ function HomePage() {
     return (
         <Fragment>
             <Appearance />
-            <FeaturedPosts posts={DUMMY_POST}/>
+            <FeaturedPosts posts={DUMMY_POSTS}/>
         </Fragment>
     )
 }

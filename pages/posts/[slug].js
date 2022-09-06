@@ -1,9 +1,9 @@
 import React from 'react'
 
-function post() {
+function PostPage() {
     return (
         <div>[id]</div>
     )
 }
 
-export default [id]
+export default PostPage
