@@ -1,9 +1,11 @@
 import React from 'react'
 
-function PostPage() {
+function PostDetailPage() {
     return (
-        <div>[id]</div>
+        <div>
+            
+        </div>
     )
 }
 
-export default PostPage
+export default PostDetailPage
