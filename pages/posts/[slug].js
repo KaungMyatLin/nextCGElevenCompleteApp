@@ -1,10 +1,8 @@
-import React from '../../components/post/'
+import PostContent from '../../components/post/post-detail/post-content'
 
 function PostDetailPage() {
     return (
-        <div>
-            
-        </div>
+        <PostContent  />
     )
 }
 
