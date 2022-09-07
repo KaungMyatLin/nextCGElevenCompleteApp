@@ -1,4 +1,4 @@
-import React from 'react'
+import React from '../../components/post/'
 
 function PostDetailPage() {
     return (
