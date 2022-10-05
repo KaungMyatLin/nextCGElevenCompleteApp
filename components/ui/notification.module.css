@@ -1,0 +1,23 @@
+.notification {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.success {
+    background-color: var(--color-success-500);
+    color: var(--color-grey-800)
+}
+
+.error {
+    background-color: var(--color-error-500);
+}
+
+.notification h2 {
+    font-size: var(--size-6);
+    margin: 0;
+}
+
+.notification p {
+    margin: 0;
+}
