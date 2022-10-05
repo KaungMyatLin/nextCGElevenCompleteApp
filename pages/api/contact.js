@@ -12,7 +12,7 @@ const handler = async (req, res) => {
         //connect to db here.
         let client
         try {
-            client = await MongoClient.connect('mongodb+srv://anyadmin:tw22d56f@cluster0.l3tew0h.mongodb.net/nextcgelevencompleteapp?retryWrites=true&w=majority')
+            client = await MongoClient.connect('mongodb+srv://anyadm:tw22d56f@cluster0.l3tew0h.mongodb.net/nextcgelevencompleteapp?retryWrites=true&w=majority')
         }catch (err) {
             res.status(500).json({ message: 'could not connect to db'})
             return

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import classes from './contact-form.module.css'
 import Notification from '@components/ui/notification'
 
@@ -24,6 +24,18 @@ const contactForm = () => {
     const [entMsg, setEntMsg] = useState('')
     const [requestStatus, setRequestStatus] = useState() // 'pending','success','error'
     const [requestError, setRequestError] = useState()
+
+    useEffect( () => {
+        if (requestStatus === 'success' || requestStatus === 'error') {
+            const timer = setTimeout( () => {
+                setRequestStatus(null)
+                setRequestError(null)
+            } , 3000)
+
+            return () => clearTimeout(timer);
+        }
+    }, [requestStatus])
+
     const sendMsgHdl = async(e) => {
         e.preventDefault();
         const bodyContent = {
@@ -58,7 +70,7 @@ const contactForm = () => {
     }
     if (requestStatus === 'error') {
         notification = {
-            status: 'pending'
+            status: 'error'
             , title: 'Error! '
             , message: requestError
         }
