@@ -18,7 +18,7 @@ async function setContactData (contactDetail) {
     }
 }
 
-const contactForm = () => {
+const ContactForm = () => {
     const [entEm, setEntEm] = useState('')
     const [entNm, setEntNm] = useState('')
     const [entMsg, setEntMsg] = useState('')
@@ -102,4 +102,4 @@ const contactForm = () => {
     )
 }
 
-export default contactForm
+export default ContactForm

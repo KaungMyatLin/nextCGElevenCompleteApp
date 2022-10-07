@@ -2,9 +2,13 @@ import PostHeader from './post-header'
 import classes from './post-content.module.css'
 import Image from 'next/image'
 import ReactMarkDown from 'react-markdown'
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
+import atomDark from 'react-syntax-highlighter/dist/cjs/styles/prism/atom-dark'
+import chosenLang1 from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript'
+import chosenLang2 from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript'
 
+SyntaxHighlighter.registerLanguage('js', chosenLang1)
+SyntaxHighlighter.registerLanguage('css', chosenLang2)
 function PostContent(props) {
     const {post} = props;
     const imagePath= `/images/post/${post.slug}/${post.image}`
@@ -34,15 +38,14 @@ function PostContent(props) {
                 <SyntaxHighlighter
                     style={atomDark}
                     language={language}
-                    children={children}
-                />
+                >{children}</SyntaxHighlighter>
             );
         }
     }
     return (
         <article className={classes.content}>
             <PostHeader title={post.title} image={imagePath}/>
-            <ReactMarkDown components={customRenderers} children={post.content} />
+            <ReactMarkDown components={customRenderers} >{post.content}</ReactMarkDown>
         </article>
     )
 }
